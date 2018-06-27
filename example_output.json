@@ -1,0 +1,95 @@
+/* Sample Return Values for get_basic_case_info_by_name('Firstname Lastname', 'return_value') */
+{
+    "results": [
+        {
+            "id": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "full_name": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "county": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "addr1": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "phone_home": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "phone_business": {
+                "raw_value": "",
+                "text_value": "N\/A"
+            },
+            "phone_fax": {
+                "raw_value": "",
+                "text_value": "N\/A"
+            },
+            "phone_mobile": {
+                "raw_value": "",
+                "text_value": "N\/A"
+            },
+            "phone_other": {
+                "raw_value": "",
+                "text_value": "N\/A"
+            },
+            "legal_problem_code": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "unique_id": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "dob": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "identification_number": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "email": {
+                "raw_value": "",
+                "text_value": "N\/A"
+            },
+            "current_disposition": {
+                "raw_value": "Case: Closed",
+                "text_value": "Case: Closed"
+            },
+            "date_open": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "close_date": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "close_reason": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "disposition_status": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "disposition_date": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "primary_advocate": {
+                "raw_value": "",
+                "text_value": ""
+            },
+            "url": "\/matter\/dynamic-profile\/view\/"
+        }
+    ],
+    "error": false,
+    "error_text": "",
+    "run_time": ""
+}
