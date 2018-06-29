@@ -1,2 +1,5 @@
 *.pyc
 *.log
+phantomjs
+external_intake.xml
+external_intake_xml.py
