@@ -1,4 +1,9 @@
+from bs4 import BeautifulSoup as bsoup
 import requests
+import os
+import selenium
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 class LegServ:
     ## Example:
@@ -20,9 +25,8 @@ class LegServ:
         final_list = []
         if len(results_list) > 0:
             for result in results_list:
-                final_list.append(r_json['results'][0]['label'])
+                final_list.append(r_json['results'][0])
 
-        print("List = ", final_list)
         return final_list
 
 
@@ -41,46 +45,60 @@ class LegServ:
         if len(results_list) > 0:
             for result in results_list:
                 final_list.append(r_json['results'][0][return_value]['text_value'])
-            # LegServ.json_values_to_list(final_list, return_value, results_list, r_json)
+
         else:
             final_list.append("Sorry, no results")
 
         return final_list
 
     def create_case_note(self, case_number, note):
+        ## creates a case note in the case with the given case_number
         try:
             r = requests.post(self.initial_domain+"/matter/api/create_case_note/?case_number="+case_number+"&note="+note)
         except Exception as e:
             print(str(e))
 
-    def help_me(self):
+    def online_intake_trigger(self, firstname, middlename, lastname):
+        ### creates an online intake
+        try:
+            r = requests.post(self.initial_domain+"/matter/api/online_intake_trigger/?first="+firstname+"&middle="+middlename+"&last="+lastname)
+            print(r.json())
+        except Exception as e:
+            print(str(e))
+
+
+
+
+
+    def help(self):
         print("""
         Available methods: \n
-        create_case_note(self, case_number, note)
-        get_basic_case_info_by_name(self, name_to_query, return_value)
-        check_for_cases(self, name_to_query)
+            create_case_note(self, case_number, note)
+            get_basic_case_info_by_name(self, name_to_query, return_value)
+            check_for_cases(self, name_to_query)
+            create_case(xml_file)
         \n
         Available return_value(s) for get_basic_case_info_by_name:\n
-        "id"
-        "full_name"
-        "county"
-        "addr1"
-        "phone_home"
-        "phone_business"
-        "phone_fax"
-        "phone_mobile"
-        "phone_other"
-        "legal_problem_code"
-        "unique_id"
-        "dob"\n
-        "identification_number"
-        "email"
-        "current_disposition"
-        "date_open"
-        "close_date"
-        "close_reason"
-        "disposition_status"
-        "disposition_date"
-        "primary_advocate"
-        "url"
+            "id"
+            "full_name"
+            "county"
+            "addr1"
+            "phone_home"
+            "phone_business"
+            "phone_fax"
+            "phone_mobile"
+            "phone_other"
+            "legal_problem_code"
+            "unique_id"
+            "dob"\n
+            "identification_number"
+            "email"
+            "current_disposition"
+            "date_open"
+            "close_date"
+            "close_reason"
+            "disposition_status"
+            "disposition_date"
+            "primary_advocate"
+            "url"
         """)
