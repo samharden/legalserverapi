@@ -1,10 +1,10 @@
 ## Legal Server API Package
 
 ### Example:
-#### >>> from legalserverapi import LegServ
-#### >>> query = LegServ('username', 'password', 'domain')
+#### >>> from legalserverapi import Person
+#### >>> Example: new_client_1 = Person('username', 'password', 'domain.legalserver.org', 'John', 'Doe')
 #### (Note: make sure your username and password don't contain special characters)
-#### >>> query.get_basic_case_info_by_name('John Doe', 'id')
+#### >>> new_client_1.get_basic_case_info_by_name('id')
 
 ### Parameters For All Methods
   - output_format – Optional – json|xml – defaults to json
